@@ -1,44 +1,36 @@
-# Minimal 4o-mini-search MCP Server
+# 🔎 Supercharge Your AI with Web Search Powers
 
-A minimal MCP server that interacts with OpenAI and OpenRouter to perform searches using the GPT-4o-mini-search-preview model.
+**Save Cursor/Windsurf credits and pay cash instead (it's worth it!)**
 
-## Features
+Want to give your AI coder the power to search the web without going broke?
 
-- Simple MCP server with a single search tool
-- Support for both OpenAI and OpenRouter.ai
-- Save credits on searches and pay 1-3 cents instead!
+That's why I built **4o-mini-search** MCP Server.
 
-## Installation
+And the best thing is, it's super easy to use!
 
-You can install the package globally:
+## ✨ What This Does For You
 
-```bash
-npm install -g @rebers/4o-mini-search-mcp
-```
+You can search the web through OpenAI's **4o-mini Search** model.
 
-Or run it directly with npx:
+It basically crawls the web, and gives you (or your AI coder) a super helpful answer.
 
-```bash
-npx @rebers/4o-mini-search-mcp
-```
+- **Get Docs**: Read the latest docs without searching/copy/pasting
+- **Save Money**: Pay just 1-3 cents per search instead of wasting credits.
+- **Beginner-Friendly**: Works right out of the box thanks to a simple `npx` command.
+- **Super Compatible**: Works seamlessly with Claude, Cursor AI, and other popular MCP clients
+- **Flexible APIs**: Use with either OpenAI directly, or OpenRouter.ai!
 
-## Running the Server
+## 🚀 Quick Start
 
-The server requires an API key for either OpenAI or OpenRouter.ai.
+Could not be easier, all you have to do is add it to your MCP JSON config file.
 
-```bash
-# Using npx directly
-API_KEY=your-api-key npx @rebers/4o-mini-search-mcp
+If you don't know what it is, just give it a quick search like [this one][https://www.google.com/search?q=mcp+setup+cursor+ai].
 
-# If installed globally
-API_KEY=your-api-key 4o-mini-search-mcp
-```
+## 🔧 Setting Up With Claude, Cusor & Co
 
-This will start the MCP server using stdio transport, which can be connected to by MCP clients.
+Just copy the configuration below, and that's it.
 
-### Configuring for Claude.app
-
-To use this MCP server with Claude, Cursor AI, and similar, add the following to your configuration file:
+Your AI can now search the web at a fraction of the cost!
 
 ```json
 {
@@ -48,48 +40,32 @@ To use this MCP server with Claude, Cursor AI, and similar, add the following to
       "args": ["@rebers/4o-mini-search-mcp"],
       "env": {
         "API_KEY": "your-api-key",
-        "PROVIDER": "openai"
+        "PROVIDER": "openai"  // or "openrouter"
       }
     }
   }
 }
 ```
 
-### Environment Variables
+2. Replace `your-api-key` with your actual API key
+3. Add to your configuration file
+4. Restart your AI application
 
-The server requires the following environment variables:
+## 💡 Using Your New Search Power
 
-- `API_KEY` (required): Your OpenAI or OpenRouter.ai API key
-- `PROVIDER` (optional): The service to use, either "openai" (default) or "openrouter"
+Once set up, simply ask your AI to search something.
 
-### Using the Search Tool
+> "search mcp for latest 3.7 model and how to use it with node sdk"
+> 
+> "search mcp for how nextjs app router works exactly and how to use it"
+> 
+> "search mcp for for the latest sveltekit templates"
 
-The server provides a single tool called `search` with the following parameter:
+It will then use OpenAI's **4o-mini-search** and deliver fresh information directly to your AI's context!
 
-- `query` (string, required): The search query to send to the model
+![Example Output](images/example.png)
 
-## Example
+## 🛠️ Troubleshooting
 
-When connected to an MCP client like Claude.app, you can use the search tool like this:
-
-```
-Use the search tool to find information about climate change.
-```
-
-The tool will make a request to either OpenAI or OpenRouter.ai (depending on the `PROVIDER` environment variable) and return the search results.
-
-## Troubleshooting
-
-### Cursor MCP Configuration
-
-When configuring this MCP server for Cursor, you may encounter issues with the mcp.json file. If the server doesn't appear to be working correctly after editing the configuration:
-
-1. Save the mcp.json file
-2. Restart Cursor
-3. Try again
-
-This often resolves issues with the MCP configuration not being properly loaded.
-
-## License
-
-MIT
+**Issue**: Server not connecting in Cursor AI
+**Fix**: After saving configuration, restart Cursor completely and try again.
