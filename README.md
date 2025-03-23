@@ -62,5 +62,6 @@ It will then use OpenAI's **4o-mini-search** and deliver fresh information direc
 
 ## 🛠️ Troubleshooting
 
-**Issue**: Server not connecting in Cursor AI
-**Fix**: After saving configuration, restart Cursor completely and try again.
+**Issue**: Server not connecting in Cursor AI (wrong API key or similar)
+
+**Fix**: There is a weird bug in Cursor with the MCP file. Just restart the entire editor completely and try again.
