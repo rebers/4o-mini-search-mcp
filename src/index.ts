@@ -57,7 +57,12 @@ async function performSearch(query: string) {
     store: false,
   });
 
-  return response;
+  // Extract content from all choices and combine them
+  const contents = response.choices
+    .map(choice => choice.message.content ?? '')
+    .filter(content => content !== '');
+  
+  return contents.join('\n\n');
 }
 
 // Create an MCP server
@@ -79,7 +84,7 @@ server.tool(
         content: [
           {
             type: 'text',
-            text: JSON.stringify(result, null, 2),
+            text: result,
           },
         ],
       };
