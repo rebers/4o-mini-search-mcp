@@ -1,0 +1,44 @@
+{
+  "name": "@rebers/4o-mini-search-mcp",
+  "version": "0.1.0",
+  "description": "Minimal MCP server for OpenAI and OpenRouter.ai search",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "4o-mini-search-mcp": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/index.js', '755')\"",
+    "start": "node dist/index.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "openai": "^4.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebers/4o-mini-search-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "search",
+    "openai",
+    "gpt4o",
+    "mini",
+    "openrouter"
+  ],
+  "author": "rebers",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

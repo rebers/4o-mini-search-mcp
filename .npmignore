@@ -1,0 +1,21 @@
+# Source code
+src/
+tests/
+
+# Configuration files
+tsconfig.json
+.gitignore
+.github/
+.vscode/
+.idea/
+
+# Build process
+build/
+
+# Docs
+docs/
+
+# Misc
+*.log
+.DS_Store
+Thumbs.db 
